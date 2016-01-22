@@ -22,4 +22,5 @@ USAGE
 * Enter your account details in config.php     
   This file uses Unix style line endings so Windows Notepad will not work.     
   Wordpad is fine as long as you don't try to apply formatting.
+* Execute script with 'php -f client.php'
 * Exit status of zero on regular exit or 99 on error
