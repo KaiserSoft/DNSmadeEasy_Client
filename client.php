@@ -6,7 +6,7 @@
  * Project URL: https://github.com/KaiserSoft/DNSmadeEasy_Client    
  * Support the software with Bitcoins !thank you!: 157Gh2dTCkrip8hqj3TKqzWiezHXTPqNrV    
  * Copyright (C) 2016 Mirko Kaiser    
- * First created in Germany on 2016-01-221   
+ * First created in Germany on 2016-01-21   
  * License: New BSD License
  * 
  * Usage:

@@ -13,7 +13,8 @@ License: New BSD License
 
 Requirements
 ============
-* PHP 5.x or later. Tested with PHP 5.6 on Linux and with XAMPP on Windows 10^
+* PHP 5.x or later. Tested with PHP 5.6 on Linux and with XAMPP on Windows 10
+* cURL for PHP. Included in XAMPP, usually called php-curl or php56-curl on BSD or Linux
 
  
 USAGE
