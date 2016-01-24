@@ -21,8 +21,8 @@ Requirements
 * php-curl module
 
 
-Usage:
-======
+Usage
+=====
 *  Use the DNSmadeEasy.com control panel to create a dynamic record
 *  Enter your account information in config.php
 *  Run the script manually to ensure everything is working    
