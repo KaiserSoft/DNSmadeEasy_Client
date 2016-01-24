@@ -1,5 +1,5 @@
-DNSmadeEasy.com Dynamic DNS Updater
-===================================
+DNSmadeEasy.com Dynamic DNS (DDNS) Update Script
+================================================
 Update script for dynamic DNS service offered by DNSmadeEasy.com    
 The script is designed to be run as a FreeBSD/Linux cronjob or Windows task. It will lookup    
 your external IP, cache the result and check if anything changed.   
@@ -16,7 +16,8 @@ License: New BSD License
 
 Requirements
 ============
-* PHP 5 or later. Tested with PHP 5.6 on FreeBSD, Linux and under XAMPP on Windows 10
+* Tested with PHP 5.6 on FreeBSD, Linux and on Windows 10 with [XAMPP 5.6](https://www.apachefriends.org/index.html)
+* PHP 5 CLI
 * php-filter module
 * php-curl module
 
@@ -35,5 +36,5 @@ Usage
   */15 * * * * cd /path/to/script && php -f client.php >>client.log 2>&1
 * Windows Task    
   Setup the task to execute the following command every 15 minutes    
-  php -f client.php >> client.log    
+  c:\xampp\php.exe -f client.php >> client.log    
   and set it to start in the directory containing 'client.php'
