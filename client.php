@@ -270,8 +270,9 @@ function check_permissions(){
   }
 
   // ensure that the cache file or directory is writable
-  if( !is_writable( $PWD.$DIR_SLASH )
-          || ( file_exists($PWD.$DIR_SLASH.$CONFIG['cache_ip']) && !is_writable($PWD.$DIR_SLASH.$CONFIG['cache_ip'])) ){
+  if( ( file_exists($PWD.$DIR_SLASH.$CONFIG['cache_ip']) && !is_writable($PWD.$DIR_SLASH.$CONFIG['cache_ip'])) 
+	  || !is_writable( $PWD.$DIR_SLASH ) )
+  {
       echo date('r')." - ERROR: can not write to cache. Please check permission for: ".$PWD.$DIR_SLASH.$CONFIG['cache_ip'].$LF;
       exit(99);
   }
