@@ -125,6 +125,7 @@ function update_dns_record( $username, $password, $record_id, $ipaddress ){
     global $CONFIG;
     global $DIR_SLASH;
     global $PWD;
+	global $LF;
 
     // create a new cURL resource
     $ch = curl_init();
