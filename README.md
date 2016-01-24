@@ -1,27 +1,39 @@
 DNSmadeEasy.com Dynamic DNS Updater
 ===================================
-This is a PHP cli script to update a dynamic DNS record for DNSmadeEasy.com
-The script will run under Linux, Windows or any other operating system with PHP 5+ installed.
+Update script for dynamic DNS service offered by DNSmadeEasy.com
+The script is designed to be run as a FreeBSD/Linux cronjob or Windows task. It will lookup
+your external IP, cache the result and check if anything changed.
 
-Author: Mirko Kaiser, http://www.KaiserSoft.net   
-Project URL: https://github.com/KaiserSoft/DNSmadeEasy_Client    
-Support the software with Bitcoins !thank you!: 157Gh2dTCkrip8hqj3TKqzWiezHXTPqNrV    
-Copyright (C) 2016 Mirko Kaiser    
-First created in Germany on 2016-01-21    
-License: New BSD License  
+DNS records are updated using POST requests over https.
+
+Author: Mirko Kaiser, http://www.KaiserSoft.net
+Project URL: https://github.com/KaiserSoft/DNSmadeEasy_Client
+Support the software with Bitcoins !thank you!: 157Gh2dTCkrip8hqj3TKqzWiezHXTPqNrV
+Copyright (C) 2016 Mirko Kaiser
+First created in Germany on 2016-01-21
+License: New BSD License
 
 
 Requirements
 ============
-* PHP 5.x or later. Tested with PHP 5.6 on Linux and with XAMPP on Windows 10
-* cURL for PHP. Included in XAMPP, usually called php-curl or php56-curl on BSD or Linux
+* PHP 5 or later. Tested with PHP 5.6 on FreeBSD, Linux and under XAMPP on Windows 10
+* php-filter module
+* php-curl module
 
- 
-USAGE
-=====
-* Use the DNSmadeEasy.com control panel to create a dynamic record
-* Enter your account details in config.php     
-  This file uses Unix style line endings so Windows Notepad will not work.     
-  Wordpad is fine as long as you don't try to apply formatting.
-* Execute script with 'php -f client.php'
-* Exit status of zero on regular exit or 99 on error
+
+Usage:
+======
+*  Use the DNSmadeEasy.com control panel to create a dynamic record
+*  Enter your account information in config.php
+*  Run the script manually to ensure everything is working
+   php -f client.php
+* or use the following to to force a custom IP
+   php -f client.php 127.0.0.1
+* the script will print a return message on screen and exit with 0 (zero) on success of 99 on failure.
+  "Sun, 24 Jan 2016 11:54:33 +0100 - updating record with aaa.bbb.ccc.ddd"
+* FreeBSD / Linux cronjob - use the following line for your cronjob
+  */15 * * * * cd /path/to/script && php -f client.php >>client.log 2>&1
+* Windows Task
+  Setup the task to execute the following command every 15 minutes
+  php -f client.php >> client.log
+  and set it to start in the directory containing 'client.php'
