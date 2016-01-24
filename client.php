@@ -44,11 +44,15 @@ $CONFIG['client_id'] = 'DNSmadeEasy.com Updater/2016.01.24 https://www.mysupport
 $external_ip = get_external_ip( $argv, $CONFIG['ipscript']);
 
 // update DNS if it changed
-if(  $external_ip == '' )
+if( $external_ip === $cached_ip )
 {
-    echo date('r')." - IP lookup server returned invalid data. $external_ip".$LF;
-    exit(99);
+    echo date('r')." - external IP has not changed: $external_ip$LF";
+    exit(0);
 
+}elseif(  $external_ip == '' ){
+    echo date('r')." - IP lookup server returned invalid data. $external_ip$LF";
+    exit(99);
+	
 }elseif( $external_ip !== $cached_ip && strpos( $external_ip, '.' ) !== false ) {
 
     // update DNS record
@@ -56,12 +60,8 @@ if(  $external_ip == '' )
     put_cached_IP( $PWD.$DIR_SLASH.$CONFIG['cache_ip'], $external_ip);
     exit(0);
 
-}elseif( $external_ip === $cached_ip ){
-    echo date('r')." - external IP has not changed: $external_ip".$LF;
-    exit(0);
-
 }else{
-    echo date('r')." - ERROR: unhandeld script condition".$LF;
+    echo date('r')." - ERROR: unhandeld script condition$LF";
     exit(99);
 }
 
