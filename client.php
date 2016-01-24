@@ -114,6 +114,7 @@ function process_records( &$CONFS, &$RECS, &$IP ){
             // submit new DNS info
             $update_return = update_dns_record( $CONFS['username'], $tmp_pw, $entry['record_id'], $IP);
             checks_update_return($update_return, $entry['record_id'], $IP);
+			sleep(1); //don't hammer the server when submitting multiple values
         }
     }
 }
