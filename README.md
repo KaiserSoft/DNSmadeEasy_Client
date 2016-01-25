@@ -29,7 +29,7 @@ Usage
 *  Enter your account information in config.php
 *  Run the script manually to ensure everything is working    
    php -f client.php    
-* or use the following to to force a custom IP    
+* or use the following to force a custom IP    
    php -f client.php 127.0.0.1    
 * the script will print a return message on screen and exit with 0 (zero) on success or 99 on failure.    
   "Sun, 24 Jan 2016 11:54:33 +0100 - updating record with aaa.bbb.ccc.ddd"    
