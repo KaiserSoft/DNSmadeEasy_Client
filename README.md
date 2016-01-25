@@ -24,7 +24,7 @@ Requirements
 
 Usage
 =====
-*  (Download the latest release)[https://github.com/KaiserSoft/DNSmadeEasy_Client/archive/2016-01-24.zip]
+*  [Download the latest release](https://github.com/KaiserSoft/DNSmadeEasy_Client/archive/2016-01-24.zip)
 *  Use the DNSmadeEasy.com control panel to create a dynamic record
 *  Enter your account information in config.php
 *  Run the script manually to ensure everything is working    
